@@ -1,0 +1,132 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+        <% event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tour_id %>
+    <%= form.number_field :tour_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :course_id %>
+    <%= form.number_field :course_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender_boy %>
+    <%= form.check_box :gender_boy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender_girl %>
+    <%= form.check_box :gender_girl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_jun %>
+    <%= form.check_box :category_jun %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_juv %>
+    <%= form.check_box :category_juv %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_ban %>
+    <%= form.check_box :category_ban %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_pee %>
+    <%= form.check_box :category_pee %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_ato %>
+    <%= form.check_box :category_ato %>
+  </div>
+
+  <div class="field">
+    <%= form.label :level_id %>
+    <%= form.number_field :level_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :days %>
+    <%= form.number_field :days %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reg_deadline %>
+    <%= form.datetime_select :reg_deadline %>
+  </div>
+
+  <div class="field">
+    <%= form.label :qual_required %>
+    <%= form.check_box :qual_required %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comments %>
+    <%= form.text_area :comments %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :private %>
+    <%= form.check_box :private %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mother %>
+    <%= form.check_box :mother %>
+  </div>
+
+  <div class="field">
+    <%= form.label :father %>
+    <%= form.check_box :father %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other_children %>
+    <%= form.check_box :other_children %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.check_box :note %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

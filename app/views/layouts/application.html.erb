@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+      <!-- Required meta tags always come first -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+    <title>JuniorGolf2020</title>
+
+
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag '/favicon.ico' %>
+ 
+    <%= csrf_meta_tags %>
+
+
+    </head>
+
+
+
+    <body>
+
+    <%= render 'layouts/navbar'  %>
+
+ <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+      
+    <% if user_signed_in?  %>
+      <h3> <%= current_user.first_name %> <%=current_user.last_name %> 
+
+               
+        <% if current_user.gender_boy %>
+          <i style="color:blue" class="fa fa-male "></i>  
+        <% else %>
+          <i></i>   
+        <% end %>
+        <% if current_user.gender_girl %>
+          <i style="color:pink" class="fa fa-female "></i>  
+        <% else %>
+          <i></i>   
+        <% end %>
+      
+      </h3>
+
+
+      <h2>
+        <% if current_user.category_jun %>
+          <i> Junior / </i>
+        <% end %>
+        <% if current_user.category_juv %>
+          <i> Juvenile / </i>
+        <% end %>
+        <% if current_user.category_ban %>
+          <i> Bantam / </i>
+        <% end %>
+        <% if current_user.category_pee %>
+          <i> Pee-Wee / </i>
+        <% end %>
+        <% if current_user.category_ato %>
+          <i> Atom / </i>
+        <% end %>
+
+      </h2>
+
+
+    <% end %>
+
+
+
+
+
+
+    <div id="main-container" class="container-fluid" >
+
+        <%= yield %>
+    </div>
+        
+
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <nav class="navbar-brand">
+    <%= link_to "JuniorGolf", root_path, class:"navbar-brand" %>
+  </nav>
+
+
+
+<% if current_user.present? %>
+  <% if current_user.user_type.name == "Admin"%>
+
+    <%= link_to '<button type="button" class="btn btn-success ml-auto mr-1">Dashboard</button>'.html_safe, dashboards_path %>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+  <% else %>
+    <%= link_to '<button type="button" class="btn btn-success ml-auto mr-1">Calendar</button>'.html_safe, root_path %>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+  <% end %>
+
+
+
+
+
+
+    <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+        <ul class="navbar-nav text-right">
+
+
+          <li class="nav-item active">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" >New</a>
+            <div class="dropdown-menu" >
+              <a class="dropdown-item">
+                <%= link_to 'Add Course', '#'%>
+              </a>
+              <a class="dropdown-item">
+                <%= link_to 'Add Tournament2', '#'%>
+              </a>
+            </div>
+          </li>
+
+
+
+          <li class="nav-item active whitetext">
+            <a class="nav-link">
+              <%= link_to edit_user_registration_path(current_user) do %>
+                  <i class="fas fa-user whitetext"></i> <span class = "whitetext">Profile    </span>
+              <% end %>
+            </a>
+          </li>
+
+
+
+          <li class="nav-item active whitetext">
+            <a class="nav-link">
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fas fa-sign-out-alt whitetext "></i> <span class = "whitetext">Signout</span>
+              <% end %>
+            </a>
+          </li>
+
+        </ul>
+
+
+<% else %>
+
+
+  <%= link_to '<button type="button" class="btn btn-success pull-right mr-0.25 fas fa-sign-in-alt whitetext "> <span class="whitetext">Signin</span></button>'.html_safe, root_path %>
+
+
+
+<% end %>
+
+    </div>
+
+
+
+</nav>

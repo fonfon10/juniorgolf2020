@@ -1,0 +1,51 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  tour_id: 1
+  course_id: 1
+  gender_boy: false
+  gender_girl: false
+  category_jun: false
+  category_juv: false
+  category_ban: false
+  category_pee: false
+  category_ato: false
+  level_id: 1
+  days: 1
+  start_time: 2020-03-15 19:48:18
+  end_time: 2020-03-15 19:48:18
+  reg_deadline: 2020-03-15 19:48:18
+  qual_required: false
+  comments: MyText
+  user_id: 1
+  private: false
+  mother: false
+  father: false
+  other_children: false
+  note: false
+
+two:
+  name: MyString
+  tour_id: 1
+  course_id: 1
+  gender_boy: false
+  gender_girl: false
+  category_jun: false
+  category_juv: false
+  category_ban: false
+  category_pee: false
+  category_ato: false
+  level_id: 1
+  days: 1
+  start_time: 2020-03-15 19:48:18
+  end_time: 2020-03-15 19:48:18
+  reg_deadline: 2020-03-15 19:48:18
+  qual_required: false
+  comments: MyText
+  user_id: 1
+  private: false
+  mother: false
+  father: false
+  other_children: false
+  note: false
